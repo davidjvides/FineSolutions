@@ -24,7 +24,7 @@ $app->get('/', function() use($app) {
 
 $app->post('/modificarDato', function (Request $request) use ($app) {
    	$nombre = $request->get('nombre');
-	$respuesta = "Hola" .$nombre;
+	$respuesta = "Hola vides" .$nombre;
    	return $respuesta;
 });
 
