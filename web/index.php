@@ -22,7 +22,7 @@ $app->get('/', function() use($app) {
   return $app['twig']->render('index.twig');
 });
 
-$app->post('/modificarDato', function (Request $request) use ($app) {
+$app->post('/Quien', function (Request $request) use ($app) {
    	$nombre = $request->get('nombre');
 	$respuesta = "Hola vides" .$nombre;
    	return $respuesta;
