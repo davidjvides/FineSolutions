@@ -1,5 +1,7 @@
 <?php
 
+use Symfony\Component\HttpFoundation\Request;
+
 require('../vendor/autoload.php');
 
 $app = new Silex\Application();
@@ -22,16 +24,22 @@ $app->get('/', function() use($app) {
   return $app['twig']->render('index.twig');
 });
 
-$app->post('/Quien', function (Request $request) use ($app) {
+
+
+$app->post('/enviodato', function (Request $request) use ($app) {
+   return $request;
+});
+
+
+$app->post('/quien', function (Request $request) use ($app) {
    	$nombre = $request->get('nombre');
-	$respuesta = "Hola vides" .$nombre;
+	$respuesta = "David Vides? " .$nombre;
    	return $respuesta;
 });
 
-//Ruta de demostración, se recibe(n) dato(s) y se manipulan
+
 $app->post('/postArduino', function (Request $request) use ($app) {
    	return "OK";
 });
 
 $app->run();
-
