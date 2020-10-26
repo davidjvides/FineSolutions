@@ -30,16 +30,17 @@ $app->post('/enviodato', function (Request $request) use ($app) {
    return $request;
 });
 
+// fue lo explicado en la primera clase del profesor , en cuestion de envios de datos 
 
-$app->post('/quien', function (Request $request) use ($app) {
-	$dbconn = pg_pconnect("host=ec2-34-235-62-201.compute-1.amazonaws.com port=5432 bdname=ddhgeqsn80f2cj user=ihbstqzjlnctoz password=b500e682b709fa43bf979f2296ed9091a6287ffb4dcefd7d6a51f469503bfc61")
+#$app->post('/quien', function (Request $request) use ($app) {
+#	$dbconn = pg_pconnect("host=ec2-34-235-62-201.compute-1.amazonaws.com port=5432 bdname=ddhgeqsn80f2cj user=ihbstqzjlnctoz password=b500e682b709fa43bf979f2296ed9091a6287ffb4dcefd7d6a51f469503bfc61")
 
-	if ($dbconn) {
-		return "Conexion Exitosa";
-	}
-	   else { 
-	   	return "Sin Conexion";
-	   }
+#	if ($dbconn) {
+#		return "Conexion Exitosa";
+#	}
+#	   else { 
+#	   	return "Sin Conexion";
+#	   }
 
    	$nombre = $request->get('nombre');
 	$respuesta = "David Vides? " .$nombre;
